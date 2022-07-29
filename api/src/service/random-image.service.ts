@@ -43,17 +43,22 @@ class RandomImageService {
 
     // Select random image
     let index = randomNumber(0, images.length);
+    let extension = getFileExtension(images[index]);
 
     while (true) {
       index = randomNumber(0, images.length);
+      extension = getFileExtension(images[index]);
 
-      if (allowedExtensions.includes(images[index].split('.')[1])) {
+      if (!extension) {
+        continue;
+      }
+
+      if (allowedExtensions.includes(extension)) {
         break;
       }
     }
 
-    // Read and return image
-    return fs.readFile(path.join(imagesPath, images[index]));
+    return path.join(imagesPath, images[index])
   }
 }
 

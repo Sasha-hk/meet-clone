@@ -8,7 +8,7 @@ dotenv.config({ path: '../.env.local' });
 async function start() {
   const app = express();
 
-  const PORT = process.env.PORT;
+  const PORT = process.env.API_PORT;
 
   app.use('/api', router);
 
