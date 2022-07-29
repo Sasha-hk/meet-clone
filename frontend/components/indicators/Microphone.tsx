@@ -1,14 +1,20 @@
-// mute
-// voice
-
 import type { NextPage } from 'next';
 
-const Microphone: NextPage = () => {
+import GraphicEqIcon from '@mui/icons-material/GraphicEq';
+import VolumeOffIcon from '@mui/icons-material/VolumeOff';
+
+const Microphone: NextPage<any> = ({ mute, talking, ...props }) => {
+  if (mute) {
+    return (<VolumeOffIcon {...props} />);
+  }
+
+  if (talking) {
+    return (<GraphicEqIcon {...props} />);
+  }
+
   return (
-    <div>
-      All
-    </div>
-  )
+    <div></div>
+  );
 };
 
 export default Microphone;

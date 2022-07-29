@@ -1,0 +1,59 @@
+.gridView {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-row-gap: 12px;
+  grid-column-gap: 12px;
+  padding: 10px;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+.peopleView {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 7px;
+  background: #3C4043;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.peopleImage {
+  width: 100%;
+  flex-shrink: 1;
+  object-fit: cover;
+}
+
+.peopleName {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  color: white;
+  font-weight: 400;
+}
+
+.microphone {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .gridView {
+    display: grid;
+    grid-row-gap: 7px;
+    grid-column-gap: 7px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .peopleView {
+    max-width: 330px;
+  }
+}

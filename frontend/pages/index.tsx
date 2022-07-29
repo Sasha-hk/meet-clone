@@ -5,14 +5,15 @@ import styles from '../styles/Home.module.css'
 
 import PeoplesView from '../components/meet/Peoples';
 import Menu from '../components/meet/Menu';
+import Container from '../components/Container';
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <Container>
       <PeoplesView />
 
       <Menu />
-    </div>
+    </Container>
   )
 }
 
