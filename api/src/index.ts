@@ -1,6 +1,6 @@
 import express from 'express';
 
-import dotEnv from './dot-env';
+import dotEnv from './utils/dot-env';
 import router from './router';
 
 dotEnv();
