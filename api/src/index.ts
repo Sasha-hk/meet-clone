@@ -1,11 +1,12 @@
 import express from 'express';
-import dotenv from 'dotenv';
 
+import dotEnv from './dot-env';
 import router from './router';
 
-dotenv.config({ path: '../.env.local' });
+dotEnv();
 
 async function start() {
+  const env = process.env.NODE_ENV!;
   const app = express();
 
   const PORT = process.env.API_PORT;
@@ -13,7 +14,7 @@ async function start() {
   app.use('/api', router);
 
   app.listen(PORT, () => {
-    console.log(`Server started http://localhost:${PORT}/`)
+    console.log(`Server is running in ${env} mode at http://localhost:${PORT}/`)
   })
 }
 
