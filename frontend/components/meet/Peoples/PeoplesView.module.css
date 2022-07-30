@@ -2,12 +2,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-row-gap: 12px;
-  grid-column-gap: 12px;
-  padding: 10px;
+  grid-row-gap: calc(var(--frame-padding) - 3px);
+  grid-column-gap: calc(var(--frame-padding) - 3px);
+  padding: var(--frame-padding);
   align-items: center;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   overflow: hidden;
 }
 

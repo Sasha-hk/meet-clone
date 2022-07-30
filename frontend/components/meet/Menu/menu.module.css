@@ -1,6 +1,39 @@
 .menu {
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  padding: 0 var(--frame-padding) var(--frame-padding) var(--frame-padding);
+}
+
+.menu > span {
+  font-size: 20px;
+}
+
+.middleFunctions,
+.infoBlock {
+  display: flex;
+}
+
+.middleFunctions > div:not(:last-child) {
+  margin-right: 15px;
+}
+
+.infoBlock > *:not(:last-child) {
+  margin-right: 25px;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .menu {
+    justify-content: center;
+  }
+
+  .menu > span {
+    display: none;
+  }
+
+  .infoBlock {
+    display: none;
+  }
 }

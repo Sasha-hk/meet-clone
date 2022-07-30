@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import Microphone from "../../indicators/Microphone";
+import Voice from "./Voice";
 
 import styles from './PeoplesView.module.css';
 
@@ -13,7 +13,7 @@ const PeopleView: NextPage<any> = ({ src, name, mute, talking }) => {
 
       <span className={styles.peopleName}>{name}</span>
 
-      <Microphone
+      <Voice
         mute={mute}
         talking={talking}
         className={styles.microphone}

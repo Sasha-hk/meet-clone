@@ -13,7 +13,7 @@ const Microphone: NextPage<any> = ({ mute, talking, ...props }) => {
   }
 
   return (
-    <div></div>
+    <></>
   );
 };
 
