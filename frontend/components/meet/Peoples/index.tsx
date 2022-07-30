@@ -14,7 +14,8 @@ const PeoplesView: NextPage = () => {
     for (let i = 0; i < 12; i++) {
       views.push(<PeopleView
         key={i}
-        src={process.env.NEXT_PUBLIC_API_URL + '/random-image'}
+        src={randomBoolean() ? process.env.NEXT_PUBLIC_API_URL + '/random-image' : undefined}
+        pictureSrc={process.env.NEXT_PUBLIC_API_URL + '/random-image'}
         name={'User ' + i}
         mute={randomBoolean()}
         talking={randomBoolean()}

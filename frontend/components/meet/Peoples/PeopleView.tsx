@@ -3,13 +3,22 @@ import Voice from "./Voice";
 
 import styles from './PeoplesView.module.css';
 
-const PeopleView: NextPage<any> = ({ src, name, mute, talking }) => {
+const PeopleView: NextPage<any> = ({ src, pictureSrc, name, mute, talking }) => {
   return (
     <div className={styles.peopleView}>
-      <img
-        src={src}
-        className={styles.peopleImage}
-      />
+      {
+        src
+          ? <img
+              src={src}
+              className={styles.peopleImage}
+            />
+          : <div className={styles.pictureWrapper}>
+              <img
+                src={pictureSrc}
+                className={styles.picture}
+              />
+            </div>
+      }
 
       <span className={styles.peopleName}>{name}</span>
 
