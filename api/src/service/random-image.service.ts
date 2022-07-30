@@ -3,6 +3,7 @@ import path from 'path';
 
 import { randomNumber } from '../utils/random';
 import getFileExtension from '../utils/get-file-extension';
+import allowedFileFormats from '../config/allowed-file-formats';
 
 /**
  * Random image service
@@ -15,10 +16,9 @@ class RandomImageService {
    *
    * @returns image
    */
-  async getRandomImage() {
+  async getRandomImagePath() {
     const imagesPath = path.join(path.resolve(), 'src', 'images')
     const images = await fs.readdir(path.join(path.resolve(), 'src', 'images'));
-    const allowedExtensions = ['jpg', 'jpeg', 'png'];
 
     // Check if images exists
     let imagesExists = false;
@@ -27,7 +27,7 @@ class RandomImageService {
       const extension = getFileExtension(images[i]);
 
       if (extension) {
-        if (allowedExtensions.includes(extension)) {
+        if (allowedFileFormats.includes(extension)) {
           imagesExists = true;
         }
       }
@@ -53,7 +53,7 @@ class RandomImageService {
         continue;
       }
 
-      if (allowedExtensions.includes(extension)) {
+      if (allowedFileFormats.includes(extension)) {
         break;
       }
     }

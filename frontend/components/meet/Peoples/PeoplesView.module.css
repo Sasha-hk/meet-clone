@@ -2,12 +2,12 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-row-gap: 12px;
-  grid-column-gap: 12px;
-  padding: 10px;
+  grid-row-gap: calc(var(--frame-padding) - 3px);
+  grid-column-gap: calc(var(--frame-padding) - 3px);
+  padding: var(--frame-padding);
   align-items: center;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   overflow: hidden;
 }
 
@@ -15,6 +15,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 7px;
   background: #3C4043;
   height: 100%;
@@ -25,6 +26,7 @@
 
 .peopleImage {
   width: 100%;
+  height: 100%;
   flex-shrink: 1;
   object-fit: cover;
 }
@@ -44,6 +46,20 @@
   color: white;
 }
 
+.pictureWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
 @media only screen and (min-width: 0px) and (max-width: 768px) {
   .gridView {
     display: grid;
@@ -55,5 +71,12 @@
 
   .peopleView {
     max-width: 330px;
+  }
+
+  .pictureWrapper {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    overflow: hidden;
   }
 }
