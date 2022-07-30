@@ -12,7 +12,7 @@ export default () => {
       break;
 
     case 'production':
-      dotenv.config({ path: './.env.production' });
+      dotenv.config({ path: './.env.local' });
       break;
 
     case 'test':

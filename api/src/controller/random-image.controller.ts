@@ -13,7 +13,7 @@ class RandomImageController {
    */
   async getRandomImage(req: Request, res: Response) {
     try {
-      const path = await RandomImageService.getRandomImage();
+      const path = await RandomImageService.getRandomImagePath();
 
       res.sendFile(path);
     } catch (e: any | HttpException) {
