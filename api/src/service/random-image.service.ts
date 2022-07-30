@@ -18,7 +18,7 @@ class RandomImageService {
   async getRandomImage() {
     const imagesPath = path.join(path.resolve(), 'src', 'images')
     const images = await fs.readdir(path.join(path.resolve(), 'src', 'images'));
-    const allowedExtensions = ['jpg', 'jpeg', 'png'];
+    const allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
 
     // Check if images exists
     let imagesExists = false;
