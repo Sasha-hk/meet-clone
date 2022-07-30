@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Meet.module.css'
 
 import PeoplesView from '../components/meet/Peoples';
-import Menu from '../components/meet/Menu';
+import BottomMenu from '../components/meet/BottomMenu';
 import Container from '../components/Container';
 
 const Home: NextPage = () => {
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <Container>
       <PeoplesView />
 
-      <Menu meetingName='CodeGeeks' />
+      <BottomMenu meetingName='CodeGeeks' />
     </Container>
   )
 }

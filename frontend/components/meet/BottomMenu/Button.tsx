@@ -8,13 +8,16 @@ interface Props {
   children?: any
   className?: string,
   hideOnPhone?: boolean;
-  onClick?: () => void
+  onClick?: (...props: any) => any
   [key: string]: any
 }
 
 const Button: NextPage<Props> = ({ children, hideOnPhone, ...props }) => {
   return (
-    <div className={[styles.button, props.className, hideOnPhone ? styles.hideOnPhone : ''].join(' ')}>
+    <div
+      {...props}
+      className={[styles.button, props.className, hideOnPhone ? styles.hideOnPhone : ''].join(' ')}
+    >
       {children}
     </div>
   )
@@ -22,7 +25,10 @@ const Button: NextPage<Props> = ({ children, hideOnPhone, ...props }) => {
 
 export const LeaveButton: NextPage<Props> = ({ children, ...props }) => {
   return (
-    <div className={[styles.leaveButton, props.className].join(' ')}>
+    <div
+      {...props}
+      className={[styles.leaveButton, props.className].join(' ')}
+    >
       <CallEndIcon />
     </div>
   )

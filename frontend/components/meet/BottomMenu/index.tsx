@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 
 import Button, { LeaveButton } from './Button';
-import styles from './Menu.module.css';
+import Menu from '../Menu';
+import styles from './BottomMenu.module.css';
 
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import VideocamIcon from '@mui/icons-material/Videocam';
@@ -15,7 +16,7 @@ import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import CategoryIcon from '@mui/icons-material/Category';
 
-const Menu: NextPage<{
+const BottomMenu: NextPage<{
   meetingName: string
 }> = ({ meetingName }) => {
   return (
@@ -33,7 +34,7 @@ const Menu: NextPage<{
 
         <Button hideOnPhone={true}><AirplayIcon /></Button>
 
-        <Button><MoreVertIcon /></Button>
+        <Menu />
 
         <LeaveButton />
       </div>
@@ -51,4 +52,4 @@ const Menu: NextPage<{
   )
 };
 
-export default Menu;
+export default BottomMenu;
