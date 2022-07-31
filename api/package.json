@@ -5,11 +5,12 @@
   "license": "MIT",
   "author": "Petryk Oleksandr <sachapos50@gmail.com> (https://petryk.me/)",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon ./src/index.ts",
+    "dev": "cross-env NODE_ENV=development nodemon ./src/index.ts",
     "build": "tsc",
-    "start": "NODE_ENV=production node ./dist/index.js"
+    "start": "cross-env NODE_ENV=production node ./dist/index.js"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "nodemon": "^2.0.19"
