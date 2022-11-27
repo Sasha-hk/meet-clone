@@ -9,7 +9,7 @@ The project is built on:
 
 All cats [here](./api/src/images)
 
-## Hot to run
+## How to run
 
 ### Development mode
 
